@@ -3,7 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:resepku/theme/theme.dart';
 
 class SliderPage extends StatelessWidget {
-  const SliderPage({Key key}) : super(key: key);
+  final String image;
+  final String title;
+  final String text;
+
+  SliderPage({@required this.image, @required this.title, @required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +25,14 @@ class SliderPage extends StatelessWidget {
               color: primary,
               fontSize: 24,
             ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: 25,
+            textAlign: TextAlign.center, 
           ),
           Image.asset(
-            'assets/illustrations/il_onboarding_one.png',
+            image,
             width: MediaQuery.of(context).size.width,
           ),
           Text(
-            'Pilih resep favoritmu.',
+            title,
             style: GoogleFonts.quicksand(
                 fontSize: 24, fontWeight: FontWeight.bold, color: black),
           ),
@@ -39,7 +40,7 @@ class SliderPage extends StatelessWidget {
             height: 25,
           ),
           Text(
-            'tersedia berbagai resep dengan bermacam-macam kategori hidangan.',
+            text,
             style: GoogleFonts.quicksand(fontSize: 15, color: grey),
             textAlign: TextAlign.center,
           )
